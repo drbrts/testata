@@ -1,0 +1,113 @@
+$spacing: 15px;
+
+.navbar-naiad {
+  @extend .navbar-static-top;
+
+  .link-home {
+    display: none;
+
+    @media (min-width: $screen-sm) {
+      display: block;
+    }
+
+    @media (max-width: $screen-md-max) {
+      .text {
+        display: none;
+      }
+    }
+
+    @media (min-width: $screen-lg) {
+      .icon {
+        display: none;
+      }
+    }
+  }
+
+
+  .link-support {
+    @media (max-width: $screen-md-max) {
+      display: none;
+    }
+  }
+
+  .link-login {
+    text-transform: uppercase;
+    letter-spacing: (25em / 1000);
+  }
+
+  .link-calendar {
+    display: none;
+
+    @media (min-width: $screen-sm) {
+      display: block;
+    }
+  }
+
+  .link-language {
+    display: none;
+
+    @media (min-width: $screen-sm) {
+      display: block;
+    }
+  }
+}
+
+.navbar-flex {
+  @include display(flex);
+  @include flex-direction(row-reverse);
+}
+
+.navbar-menu {
+  @include flex(auto);
+  max-height: $navbar-height;
+  overflow: hidden;
+  padding: 0 $spacing;
+
+  .navbar-nav {
+    margin-left: 0;
+    margin-right: 0;
+
+    li {
+      float: left;
+
+      a {
+        font-size: 75%;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-decoration: none;
+      }
+
+      &:first-child a {
+        padding-left: 0;
+      }
+
+      &:last-child a {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+.navbar-user {
+  @include flex(none);
+  @include clearfix;
+  padding-right: $spacing;
+
+  .navbar-form {
+    float: right;
+    padding-right: 0;
+    padding-left: 0;
+
+    @media (max-width: $screen-sm-max) {
+      display: none;
+    }
+  }
+
+  .form-group + .form-group {
+    margin-left: $spacing;
+  }
+
+  .form-control {
+    width: 150px;
+  }
+}

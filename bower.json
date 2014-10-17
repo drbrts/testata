@@ -1,0 +1,25 @@
+{
+  "name": "testata",
+  "version": "0.0.0",
+  "authors": [
+    "Daryl Roberts <d@rbrts.io>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "neat": "1.5.1",
+    "bourbon": "v3.2.1",
+    "font-awesome": "~4.2.0",
+    "bootstrap-sass-official": "~3.2.0+2"
+  },
+  "resolutions": {
+    "bootstrap-sass-official": "~3.2.0+2"
+  }
+}

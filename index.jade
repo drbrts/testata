@@ -1,0 +1,32 @@
+.navbar.navbar-naiad.navbar-default
+  .navbar-flex
+    .navbar-menu
+      ul.nav.navbar-nav
+        li.link-home: a(href="#")
+          span.text Startseite
+          i.fa.fa-home.fa-lg.icon
+
+        li.link-new: a(href="#") New Models
+        li.link-calendar: a(href="#") Calendário
+        li.link-support: a(href="#") Ondersteuning
+        li.link-language: a(href="#") Site Language <i class="caret"></i>
+        li.link-partner: a(href="#") DVDs On The Web
+
+    .navbar-user
+
+      a.btn.btn-join.navbar-btn Join Free
+
+      form.navbar-form.form-inline(role="search")
+        .form-group
+          input.form-control(type="email" placeholder="Email Address")
+
+        .form-group
+          input.form-control(type="password" placeholder="Password")
+
+        .form-group
+          button.btn.btn-primary.btn-login(type="submit") Login
+
+      a.btn.btn-default.btn-login.navbar-btn
+        //- a.navbar-link.link-login
+        span.text Login
+        i.fa.fa-bars
