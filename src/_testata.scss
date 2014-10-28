@@ -1,0 +1,315 @@
+
+
+// Bar Height
+$testata-height: 30px !default;
+
+// Matches Flynns
+$testata-gutter-size: small !default;
+@if $testata-gutter-size == small {
+  $testata-gutter-value: 5%;
+} @else if $testata-gutter-size == medium {
+  $testata-gutter-value: 7%;
+} @else if $testata-gutter-size == large {
+  $testata-gutter-value: 10%;
+}
+
+.testata {
+
+  // .testata__bar
+  &__bar {
+    background: black;
+    @include display(flex);
+
+    &.bar--thick {
+      padding-top: 15px;
+      padding-bottom: 5px;
+    }
+
+    &.bar--reverse {
+      @include flex-direction(row-reverse);
+    }
+  }
+
+  // .testata__nav
+  &__nav {
+    @include clearfix;
+    @include flex(auto);
+    margin: 0;
+    padding: 0 .5em;
+    height: $testata-height;
+
+    & > li {
+      display: block;
+      float: left;
+
+      .bar--reverse & {
+        float: right;
+      }
+    }
+
+    a {
+      color: white;
+      font-size: 12px;
+      padding: 0 .5em;
+      line-height: $testata-height;
+      text-decoration: none;
+    }
+
+    .link--home {
+      @media (max-width: $screen-sm - 1) {
+        display: none;
+      }
+
+      .text {
+        @media (max-width: $screen-md - 1) {
+          display: none;
+        }
+      }
+
+      .icon {
+        @media (min-width: $screen-md) {
+          display: none;
+        }
+      }
+    }
+
+    .link--support {
+      @media (max-width: $screen-lg - 1) {
+        display: none;
+      }
+    }
+
+    .link--calendar {
+      @media (max-width: $screen-sm - 1) {
+        display: none;
+      }
+    }
+
+    .link--language {
+      @media (max-width: $screen-sm - 1) {
+        display: none;
+      }
+    }
+  }
+
+  // .testata__users
+  &__users {
+    @include flex(none);
+    @include display(flex);
+    @include justify-content(flex-end);
+    padding: 0 .5em;
+
+    @media (min-width: $screen-md) {
+      padding: 0 1em;
+      width: $screen-xs;
+    }
+
+    .btn--join {
+      margin-right: 1em;
+
+      @media (max-width: $screen-xs - 1) {
+        display: none;
+      }
+    }
+
+    .btn--menu {
+      @media (min-width: $screen-md) {
+        display: none;
+      }
+    }
+  }
+
+  // .testata__form
+  &__form {
+    @include clearfix;
+    @include display(flex);
+
+    @media (max-width: $screen-md - 1) {
+      display: none;
+    }
+
+    .form__group {
+      overflow: hidden;
+    }
+
+    .group--email {
+      width: 100px;
+      margin-right: 5px;
+    }
+
+    .group--password {
+      width: 100px;
+      margin-right: 5px;
+    }
+
+    .group--login {
+
+    }
+
+    input {
+      height: 20px;
+      width: 100%;
+      margin-top: 5px;
+      font-size: 12px;
+      line-height: normal;
+    }
+  }
+
+  // .testata__btn
+  &__btn {
+    $btn-height: $testata-height - 10px;
+
+    display: inline-block;
+    height: $btn-height;
+    overflow: hidden;
+    padding: 0 1em;
+    margin-top: ($testata-height - $btn-height) / 2;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: $btn-height;
+
+    &.btn--join {
+      color: black;
+      background: gold;
+      border-top: 1px solid #ccc;
+    }
+
+    &.btn--login {
+      width: 100%;
+      color: white;
+      background: #666;
+      border-top: 1px solid #ccc;
+    }
+
+    &.btn--menu {
+      color: white;
+      font-size: 12px;
+    }
+  }
+
+  &__header {
+    @include display(flex);
+    @include flex-direction(row-reverse);
+    @include align-items(flex-end);
+
+    @media (min-width: $screen-sm) {
+      padding: 0 ($testata-gutter-value / 2);
+      padding-top: ($testata-height / 2);
+    }
+
+    @media (min-width: $screen-lg) {
+      padding: 0 $testata-gutter-value;
+      padding-top: $testata-height;
+    }
+
+    background: lightgreen;
+    padding-bottom: 1em !important;
+
+    &.header--reverse {
+      @include flex-direction(row);
+    }
+
+    &.header--center {
+      @include flex-direction(column);
+    }
+  }
+
+  &__logo {
+    @include flex(none);
+    text-align: center;
+    padding: 1em;
+    background: lightblue;
+
+    .header--center & {
+      width: 100%;
+    }
+  }
+
+  &__fcs {
+    @include flex(auto);
+    @include display(flex);
+    @include align-items(flex-start);
+    @include flex-wrap(wrap);
+
+    padding: 1em;
+    background: lightyellow;
+
+    .header--reverse & {
+      @include flex-direction(row-reverse);
+    }
+
+    .header--center & {
+      width: 100%;
+    }
+  }
+
+  &__filters {
+    @include order(2);
+    @include flex(none);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .header--reverse & {
+      @include order(1);
+    }
+
+    & > li {
+      display: inline-block;
+
+      & + li {
+        margin-left: 5px;
+      }
+    }
+
+    a {
+      @include button;
+    }
+  }
+
+  &__categories {
+    @include order(1);
+    @include flex(none);
+    margin-right: 1em;
+
+    .header--center & {
+      @include order(0);
+    }
+
+    .header--reverse & {
+      @include order(2);
+    }
+
+    button {
+      @include button($base-color: red);
+      width: 200px;
+    }
+  }
+
+  &__search {
+    @include clearfix;
+    @include order(0);
+    width: 100%;
+    margin-bottom: 1em;
+
+    .header--center & {
+      @include order(1);
+      @include flex(auto);
+      width: auto;
+      margin-right: 1em;
+
+      input {
+        width: 100%;
+      }
+    }
+
+    .header--reverse & {
+
+      input {
+        float: right;
+      }
+    }
+  }
+}

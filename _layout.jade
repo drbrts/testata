@@ -1,11 +1,28 @@
 doctype html
 html(lang="en")
   head
-    link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css")
-    link(rel="stylesheet" href="/main.css")
-
     meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,\
       user-scalable=no, minimal-ui")
 
-  body
+    link(rel="stylesheet" href="/bower_components/normalize.css/normalize.css")
+    link(rel="stylesheet" href="/main.css")
+    link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css")
+
+    script(src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js")
+    script(src="/app.js")
+
+  body(ng-app="testata")
     != yield
+
+    .controls(style="padding: 0 100px")
+      br
+      br
+      br
+      button(ng-click="barReverse = !barReverse") Reverse Top Bar
+      button(ng-click="barThick = !barThick") Thick Top Bar
+      br
+      br
+      button(ng-click="headerReverse = !headerReverse; headerCenter = false;") Reverse Header
+      button(ng-click="headerCenter = !headerCenter; headerReverse = false") Center Header
+      button(ng-click="headerCenter = false; headerReverse = false") Normal Header
+      button(ng-click="showCatButton = !showCatButton") Hide Categories (side tab)

@@ -1,3 +1,10 @@
-.text {
-  margin-right: .5em;
+.icon {
+
+  &:last-child {
+    margin-left: .5em;
+  }
+
+  &:first-child {
+    margin-right: .5em;
+  }
 }

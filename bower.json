@@ -16,10 +16,6 @@
   "dependencies": {
     "neat": "1.5.1",
     "bourbon": "v3.2.1",
-    "font-awesome": "~4.2.0",
-    "bootstrap-sass-official": "~3.2.0+2"
-  },
-  "resolutions": {
-    "bootstrap-sass-official": "~3.2.0+2"
+    "normalize.css": "~3.0.2"
   }
 }

@@ -1,10 +1,21 @@
 @import "imports";
+@import "src/testata";
+
 
 body {
   min-width: 300px;
 }
 
+.text {
+  &:last-child {
+    margin-left: .5em;
+  }
 
-@import "src/buttons";
-@import "src/navbar";
-@import "src/utilities";
+  &:first-child {
+    margin-right: .5em;
+  }
+}
+
+button + button {
+  margin-left: 1em;
+}

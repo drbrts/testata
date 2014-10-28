@@ -1,32 +1,77 @@
-.navbar.navbar-naiad.navbar-default
-  .navbar-flex
-    .navbar-menu
-      ul.nav.navbar-nav
-        li.link-home: a(href="#")
-          span.text Startseite
-          i.fa.fa-home.fa-lg.icon
+.testata
 
-        li.link-new: a(href="#") New Models
-        li.link-calendar: a(href="#") Calendário
-        li.link-support: a(href="#") Ondersteuning
-        li.link-language: a(href="#") Site Language <i class="caret"></i>
-        li.link-partner: a(href="#") DVDs On The Web
+  .testata__bar(ng-class="{ \
+    'bar--thick': barThick, \
+    'bar--reverse': barReverse \
+  }")
 
-    .navbar-user
+    ul.testata__nav
 
-      a.btn.btn-join.navbar-btn Join Free
+      li.link--home: a(href="#")
+        i.fa.fa-home.fa-lg.icon
+        span.text Startseite
 
-      form.navbar-form.form-inline(role="search")
-        .form-group
-          input.form-control(type="email" placeholder="Email Address")
+      li.link--new: a(href="#") New Models
 
-        .form-group
-          input.form-control(type="password" placeholder="Password")
+      li.link--calendar: a(href="#") Calendário
 
-        .form-group
-          button.btn.btn-primary.btn-login(type="submit") Login
+      li.link--support: a(href="#") Ondersteuning
 
-      a.btn.btn-default.btn-login.navbar-btn
-        //- a.navbar-link.link-login
+      li.link--language: a(href="#")
+        span.text Site Language
+        i.fa.fa-caret-down.icon
+
+      li.link--partner: a(href="#") DVDs On The Web
+
+    .testata__users
+
+      a.testata__btn.btn--join Compte gratuit
+
+      .testata__form
+
+        .form__group.group--email
+          input(type="email" placeholder="Email Address")
+
+        .form__group.group--password
+          input(type="password" placeholder="Password")
+
+        .form__group.group--login
+          .testata__btn.btn--login Login
+
+      .testata__btn.btn--menu
         span.text Login
-        i.fa.fa-bars
+        i.fa.fa-bars.icon
+
+  .testata__header(ng-class="{ \
+    'header--center': headerCenter, \
+    'header--reverse': headerReverse \
+  }")
+
+    .testata__logo
+      img(src="http://placehold.it/232x72&text=LOGO")
+
+    .testata__fcs
+
+      .testata__search
+        input(type="text")
+
+      .testata__categories(ng-if="!showCatButton")
+        button Categories
+
+      ul.testata__filters
+
+        li: a(href="#")
+          span.text Features
+          i.fa.fa-caret-down.icon
+
+        li: a(href="#")
+          span.text Region
+          i.fa.fa-caret-down.icon
+
+        li: a(href="#")
+          span.text Language
+          i.fa.fa-caret-down.icon
+
+        li: a(href="#")
+          span.text Popularity
+          i.fa.fa-caret-down.icon

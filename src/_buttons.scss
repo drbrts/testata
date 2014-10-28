@@ -1,31 +1,22 @@
-// Shared
-.btn-gold {
-  @include button-variant(black, #f5cb07, darken(#f5cb07, 10%));
-}
-
 .btn-join {
-  @extend .btn-gold;
-  margin-right: 15px;
-  font-size: 90%;
+  $gold: #f5cb07;
+  @include button-variant(black, $gold, darken($gold, 10%));
+  font-size: 11px;
+  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: (25em / 1000);
-
-  @media (max-width: $screen-xs) {
-    display: none;
-  }
-
+  width: 100%;
 }
 
 .btn-login {
+  @include button-variant(white, #444, lighten(#444, 10%));
   text-transform: uppercase;
 
   .text {
     font-size: 90%;
   }
 
-  .navbar-user > & {
-    @media (min-width: $screen-md) {
-      display: none;
-    }
+  .navbar-form & {
+    width: 100%;
   }
 }
